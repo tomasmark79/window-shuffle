@@ -71,7 +71,7 @@ export default class WindowShuffleExtension extends Extension {
                 window.change_workspace_by_index(startIndex + offset, true);
 
                 if (maximizeWindows && window.can_maximize())
-                    window.maximize(Meta.MaximizeFlags.BOTH);
+                    window.maximize();
             });
 
             const suffix = windows.length === 1 ? '' : 's';
