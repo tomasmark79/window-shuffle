@@ -43,6 +43,13 @@ Open its settings from the Extensions application or with:
 gnome-extensions prefs window-shuffle@digitalspace.name
 ```
 
+## Support
+
+If Window Shuffle makes your workspace more comfortable, you can support its development:
+
+- [Buy Me a Coffee](https://buymeacoffee.com/tomasmark)
+- [PayPal](https://paypal.me/TomasMark)
+
 ## Planned directions
 
 - Quick Settings or panel menu action

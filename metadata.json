@@ -8,6 +8,7 @@
   "url": "https://github.com/tomasmark79/window-shuffle",
   "settings-schema": "org.gnome.shell.extensions.window-shuffle",
   "donations": {
+    "buymeacoffee": "tomasmark",
     "paypal": "TomasMark"
   }
 }
