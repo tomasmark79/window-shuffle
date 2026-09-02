@@ -21,6 +21,12 @@ GNOME manages workspaces globally. When `workspaces-only-on-primary` is enabled,
 
 ## Build and install
 
+### GNOME Extensions
+
+Install Window Shuffle from [extensions.gnome.org](https://extensions.gnome.org/extension/10853/window-shuffle/).
+
+### Manual installation
+
 ```bash
 ./build.sh -bi
 ```
