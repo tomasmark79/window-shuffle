@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.window-shuffle" path="/org/gnome/shell/extensions/window-shuffle/">
+    <key name="shuffle-windows" type="as">
+      <default>['&lt;Super&gt;&lt;Shift&gt;s']</default>
+      <summary>Shuffle windows keyboard shortcut</summary>
+      <description>Keyboard shortcut used to distribute matching windows across workspaces.</description>
+    </key>
+    <key name="collect-windows" type="as">
+      <default>['&lt;Super&gt;&lt;Shift&gt;c']</default>
+      <summary>Collect windows keyboard shortcut</summary>
+      <description>Keyboard shortcut used to collect matching windows on the active workspace.</description>
+    </key>
+    <key name="target-monitor" type="s">
+      <choices>
+        <choice value="primary"/>
+        <choice value="non-primary"/>
+        <choice value="active"/>
+        <choice value="all"/>
+        <choice value="monitor-1"/>
+        <choice value="monitor-2"/>
+      </choices>
+      <default>'primary'</default>
+      <summary>Monitor whose windows are distributed</summary>
+    </key>
+    <key name="start-workspace" type="s">
+      <choices>
+        <choice value="current"/>
+        <choice value="first"/>
+      </choices>
+      <default>'current'</default>
+      <summary>Workspace where distribution begins</summary>
+    </key>
+    <key name="focused-window-first" type="b">
+      <default>true</default>
+      <summary>Place the focused window first</summary>
+    </key>
+    <key name="include-minimized" type="b">
+      <default>true</default>
+      <summary>Include minimized windows</summary>
+    </key>
+    <key name="maximize-windows" type="b">
+      <default>false</default>
+      <summary>Maximize distributed windows</summary>
+      <description>Maximize each matching window after moving it to its destination workspace.</description>
+    </key>
+    <key name="show-feedback" type="b">
+      <default>true</default>
+      <summary>Show on-screen feedback</summary>
+    </key>
+  </schema>
+</schemalist>

@@ -1,0 +1,13 @@
+{
+  "shell-version": [
+    "50"
+  ],
+  "uuid": "window-shuffle@digitalspace.name",
+  "name": "Window Shuffle",
+  "description": "Distribute all currently open windows across GNOME workspaces or collect them back onto the current workspace.\n\nChoose which monitor to process, then trigger either action with a configurable keyboard shortcut.",
+  "url": "https://github.com/tomasmark79/window-shuffle",
+  "settings-schema": "org.gnome.shell.extensions.window-shuffle",
+  "donations": {
+    "paypal": "TomasMark"
+  }
+}
