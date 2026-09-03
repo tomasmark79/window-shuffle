@@ -13,7 +13,7 @@ Window Shuffle is a GNOME Shell 50 extension for turning a crowded desktop into 
 - Start from the current or first workspace
 - Keep the active window on the first destination workspace
 - Optionally include minimized windows
-- Optionally maximize every distributed window
+- Optionally maximize every distributed window and restore its previous size when collecting
 - OSD confirmation after each run
 - Skips dialogs, desktop components, taskbar-hidden windows, and sticky windows
 

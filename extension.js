@@ -22,6 +22,7 @@ const COLLECT_KEYBINDING = 'collect-windows';
 export default class WindowShuffleExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
+        this._maximizedByShuffle = new WeakSet();
 
         Main.wm.addKeybinding(
             SHUFFLE_KEYBINDING,
@@ -44,6 +45,7 @@ export default class WindowShuffleExtension extends Extension {
     disable() {
         Main.wm.removeKeybinding(SHUFFLE_KEYBINDING);
         Main.wm.removeKeybinding(COLLECT_KEYBINDING);
+        this._maximizedByShuffle = null;
         this._settings = null;
         console.debug(`${LOG_TAG}: disabled`);
     }
@@ -70,8 +72,11 @@ export default class WindowShuffleExtension extends Extension {
                 // Passing true lets Mutter append a destination workspace when needed.
                 window.change_workspace_by_index(startIndex + offset, true);
 
-                if (maximizeWindows && window.can_maximize())
+                if (maximizeWindows && window.can_maximize() &&
+                    !window.is_maximized()) {
+                    this._maximizedByShuffle.add(window);
                     window.maximize();
+                }
             });
 
             const suffix = windows.length === 1 ? '' : 's';
@@ -101,6 +106,11 @@ export default class WindowShuffleExtension extends Extension {
 
             windows.forEach(window => {
                 window.change_workspace_by_index(destinationIndex, false);
+
+                if (this._maximizedByShuffle.has(window)) {
+                    window.unmaximize();
+                    this._maximizedByShuffle.delete(window);
+                }
             });
 
             const suffix = windows.length === 1 ? '' : 's';

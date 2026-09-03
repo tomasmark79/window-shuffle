@@ -88,7 +88,7 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
             settings,
             'maximize-windows',
             'Maximize distributed windows',
-            'Make each window fill its monitor after moving it to a workspace.'
+            'Restore these windows to their previous size when collecting them.'
         ));
 
         group.add(this._createSwitchRow(
