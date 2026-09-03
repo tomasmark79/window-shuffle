@@ -9,7 +9,6 @@
   "gettext-domain": "window-shuffle@digitalspace.name",
   "settings-schema": "org.gnome.shell.extensions.window-shuffle",
   "donations": {
-    "buymeacoffee": "tomasmark",
     "paypal": "TomasMark"
   }
 }

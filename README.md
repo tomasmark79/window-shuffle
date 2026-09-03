@@ -1,5 +1,7 @@
 # Window Shuffle
 
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?logo=paypal)](https://paypal.me/TomasMark)
+
 **Distribute all currently open windows across GNOME workspaces.**
 
 Window Shuffle is a GNOME Shell 50 extension for turning a crowded desktop into a touchpad-friendly sequence of workspaces. Distribute matching application windows one per workspace, then collect them back onto the current workspace when needed.
@@ -53,13 +55,6 @@ Open its settings from the Extensions application or with:
 ```bash
 gnome-extensions prefs window-shuffle@digitalspace.name
 ```
-
-## Support
-
-If Window Shuffle makes your workspace more comfortable, you can support its development:
-
-- [Buy Me a Coffee](https://buymeacoffee.com/tomasmark)
-- [PayPal](https://paypal.me/TomasMark)
 
 ## Planned directions
 
