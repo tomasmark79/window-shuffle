@@ -13,7 +13,11 @@ import Meta from 'gi://Meta';
 import Shell from 'gi://Shell';
 
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
-import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
+import {
+    Extension,
+    gettext as _,
+    ngettext,
+} from 'resource:///org/gnome/shell/extensions/extension.js';
 
 const LOG_TAG = 'WindowShuffle';
 const SHUFFLE_KEYBINDING = 'shuffle-windows';
@@ -56,7 +60,7 @@ export default class WindowShuffleExtension extends Extension {
             const windows = this._getCandidateWindows(monitor);
 
             if (windows.length === 0) {
-                this._showFeedback('No matching windows found', monitor);
+                this._showFeedback(_('No matching windows found'), monitor);
                 return;
             }
 
@@ -79,15 +83,18 @@ export default class WindowShuffleExtension extends Extension {
                 }
             });
 
-            const suffix = windows.length === 1 ? '' : 's';
             this._showFeedback(
-                `Distributed ${windows.length} window${suffix} across workspaces`,
+                ngettext(
+                    '%d window distributed across workspaces',
+                    '%d windows distributed across workspaces',
+                    windows.length
+                ).format(windows.length),
                 monitor
             );
             console.debug(`${LOG_TAG}: distributed ${windows.length} window(s)`);
         } catch (error) {
             console.error(`${LOG_TAG}: failed to distribute windows`, error);
-            this._showFeedback('Window distribution failed', -1);
+            this._showFeedback(_('Window distribution failed'), -1);
         }
     }
 
@@ -97,7 +104,7 @@ export default class WindowShuffleExtension extends Extension {
             const windows = this._getCandidateWindows(monitor);
 
             if (windows.length === 0) {
-                this._showFeedback('No matching windows found', monitor);
+                this._showFeedback(_('No matching windows found'), monitor);
                 return;
             }
 
@@ -113,15 +120,18 @@ export default class WindowShuffleExtension extends Extension {
                 }
             });
 
-            const suffix = windows.length === 1 ? '' : 's';
             this._showFeedback(
-                `Collected ${windows.length} window${suffix} on this workspace`,
+                ngettext(
+                    '%d window collected on this workspace',
+                    '%d windows collected on this workspace',
+                    windows.length
+                ).format(windows.length),
                 monitor
             );
             console.debug(`${LOG_TAG}: collected ${windows.length} window(s)`);
         } catch (error) {
             console.error(`${LOG_TAG}: failed to collect windows`, error);
-            this._showFeedback('Window collection failed', -1);
+            this._showFeedback(_('Window collection failed'), -1);
         }
     }
 

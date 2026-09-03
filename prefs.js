@@ -9,7 +9,10 @@ import Gdk from 'gi://Gdk';
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 
-import {ExtensionPreferences} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import {
+    ExtensionPreferences,
+    gettext as _,
+} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 const MONITOR_VALUES = [
     'primary',
@@ -29,7 +32,7 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
         window.set_default_size(620, 620);
 
         const page = new Adw.PreferencesPage({
-            title: 'Window Shuffle',
+            title: _('Window Shuffle'),
             icon_name: 'view-grid-symbolic',
         });
 
@@ -41,22 +44,22 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
 
     _createBehaviorGroup(settings) {
         const group = new Adw.PreferencesGroup({
-            title: 'Distribution',
-            description: 'Choose which windows are placed one per workspace.',
+            title: _('Distribution'),
+            description: _('Choose which windows are placed one per workspace.'),
         });
 
         group.add(this._createComboRow(
             settings,
             'target-monitor',
-            'Windows on monitor',
-            'The primary option follows your current display configuration.',
+            _('Windows on monitor'),
+            _('The primary option follows your current display configuration.'),
             [
-                'Primary monitor',
-                'Non-primary monitor',
-                'Monitor of active window',
-                'All monitors',
-                'Monitor 1',
-                'Monitor 2',
+                _('Primary monitor'),
+                _('Non-primary monitor'),
+                _('Monitor of active window'),
+                _('All monitors'),
+                _('Monitor 1'),
+                _('Monitor 2'),
             ],
             MONITOR_VALUES
         ));
@@ -64,38 +67,38 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
         group.add(this._createComboRow(
             settings,
             'start-workspace',
-            'Start on workspace',
-            'Current keeps the focused window in your present workspace.',
-            ['Current workspace', 'First workspace'],
+            _('Start on workspace'),
+            _('Current keeps the focused window in your present workspace.'),
+            [_('Current workspace'), _('First workspace')],
             START_VALUES
         ));
 
         group.add(this._createSwitchRow(
             settings,
             'focused-window-first',
-            'Keep the active window first',
-            'When possible, place the focused window on the starting workspace.'
+            _('Keep the active window first'),
+            _('When possible, place the focused window on the starting workspace.')
         ));
 
         group.add(this._createSwitchRow(
             settings,
             'include-minimized',
-            'Include minimized windows',
-            'Also distribute application windows currently minimized.'
+            _('Include minimized windows'),
+            _('Also distribute application windows currently minimized.')
         ));
 
         group.add(this._createSwitchRow(
             settings,
             'maximize-windows',
-            'Maximize distributed windows',
-            'Restore these windows to their previous size when collecting them.'
+            _('Maximize distributed windows'),
+            _('Restore these windows to their previous size when collecting them.')
         ));
 
         group.add(this._createSwitchRow(
             settings,
             'show-feedback',
-            'Show confirmation',
-            'Display a short on-screen message after the shortcut is used.'
+            _('Show confirmation'),
+            _('Display a short on-screen message after the shortcut is used.')
         ));
 
         return group;
@@ -103,23 +106,23 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
 
     _createShortcutGroup(parent, settings) {
         const group = new Adw.PreferencesGroup({
-            title: 'Keyboard',
-            description: 'The shortcut is active in the desktop and Overview.',
+            title: _('Keyboard'),
+            description: _('The shortcut is active in the desktop and Overview.'),
         });
 
         group.add(this._createShortcutRow(
             parent,
             settings,
             'shuffle-windows',
-            'Distribute windows',
-            'Move each matching window to its own workspace.'
+            _('Distribute windows'),
+            _('Move each matching window to its own workspace.')
         ));
         group.add(this._createShortcutRow(
             parent,
             settings,
             'collect-windows',
-            'Collect windows',
-            'Bring matching windows from all workspaces to the current one.'
+            _('Collect windows'),
+            _('Bring matching windows from all workspaces to the current one.')
         ));
 
         return group;
@@ -132,13 +135,13 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
             valign: Gtk.Align.CENTER,
         });
         const changeButton = new Gtk.Button({
-            label: 'Change…',
+            label: _('Change…'),
             valign: Gtk.Align.CENTER,
             margin_start: 12,
         });
         const resetButton = new Gtk.Button({
             icon_name: 'edit-undo-symbolic',
-            tooltip_text: 'Reset to default',
+            tooltip_text: _('Reset to default'),
             valign: Gtk.Align.CENTER,
             margin_start: 6,
         });
@@ -159,7 +162,7 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
 
     _showShortcutRecorder(parent, settings, key) {
         const dialog = new Gtk.Window({
-            title: 'Set keyboard shortcut',
+            title: _('Set keyboard shortcut'),
             transient_for: parent,
             modal: true,
             default_width: 420,
@@ -175,11 +178,11 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
             valign: Gtk.Align.CENTER,
         });
         const title = new Gtk.Label({
-            label: '<b>Press the new shortcut</b>',
+            label: _('<b>Press the new shortcut</b>'),
             use_markup: true,
         });
         const hint = new Gtk.Label({
-            label: 'Escape cancels. Backspace disables the shortcut.',
+            label: _('Escape cancels. Backspace disables the shortcut.'),
             wrap: true,
         });
         const controller = new Gtk.EventControllerKey();
@@ -246,10 +249,10 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
     }
 
     _createInformationGroup() {
-        const group = new Adw.PreferencesGroup({title: 'Multi-monitor note'});
+        const group = new Adw.PreferencesGroup({title: _('Multi-monitor note')});
         group.add(new Adw.ActionRow({
-            title: 'GNOME workspace behavior still applies',
-            subtitle: 'If GNOME is configured to use workspaces only on the primary display, windows on other displays remain visible while switching workspaces. Prefer “Primary monitor” for that setup.',
+            title: _('GNOME workspace behavior still applies'),
+            subtitle: _('If GNOME is configured to use workspaces only on the primary display, windows on other displays remain visible while switching workspaces. Prefer “Primary monitor” for that setup.'),
         }));
         return group;
     }

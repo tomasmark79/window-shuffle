@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Window Shuffle\n"
+"Report-Msgid-Bugs-To: https://github.com/tomasmark79/window-shuffle/issues\n"
+"POT-Creation-Date: 2026-09-03 00:00+0200\n"
+"PO-Revision-Date: 2026-09-03 00:00+0200\n"
+"Last-Translator: Tomáš Mark\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: extension.js
+#, javascript-format
+msgid "%d window collected on this workspace"
+msgid_plural "%d windows collected on this workspace"
+msgstr[0] "Na tuto pracovní plochu bylo přesunuto %d okno"
+msgstr[1] "Na tuto pracovní plochu byla přesunuta %d okna"
+msgstr[2] "Na tuto pracovní plochu bylo přesunuto %d oken"
+
+#: extension.js
+#, javascript-format
+msgid "%d window distributed across workspaces"
+msgid_plural "%d windows distributed across workspaces"
+msgstr[0] "%d okno bylo rozdistribuováno mezi pracovní plochy"
+msgstr[1] "%d okna byla rozdistribuována mezi pracovní plochy"
+msgstr[2] "%d oken bylo rozdistribuováno mezi pracovní plochy"
+
+#: prefs.js
+msgid "<b>Press the new shortcut</b>"
+msgstr "<b>Stiskněte novou klávesovou zkratku</b>"
+
+#: prefs.js
+msgid "All monitors"
+msgstr "Všechny monitory"
+
+#: prefs.js
+msgid "Also distribute application windows currently minimized."
+msgstr "Rozdistribuuje také aktuálně minimalizovaná okna aplikací."
+
+#: prefs.js
+msgid "Bring matching windows from all workspaces to the current one."
+msgstr "Přesune odpovídající okna ze všech pracovních ploch na aktuální plochu."
+
+#: prefs.js
+msgid "Change…"
+msgstr "Změnit…"
+
+#: prefs.js
+msgid "Choose which windows are placed one per workspace."
+msgstr "Vyberte okna, která budou umístěna po jednom na každou pracovní plochu."
+
+#: prefs.js
+msgid "Collect windows"
+msgstr "Sesbírat okna"
+
+#: prefs.js
+msgid "Current keeps the focused window in your present workspace."
+msgstr "Aktuální volba ponechá aktivní okno na právě zobrazené pracovní ploše."
+
+#: prefs.js
+msgid "Current workspace"
+msgstr "Aktuální pracovní plocha"
+
+#: prefs.js
+msgid "Display a short on-screen message after the shortcut is used."
+msgstr "Po použití zkratky zobrazí krátkou zprávu na obrazovce."
+
+#: prefs.js
+msgid "Distribute windows"
+msgstr "Rozdistribuovat okna"
+
+#: prefs.js
+msgid "Distribution"
+msgstr "Distribuce"
+
+#: prefs.js
+msgid "Escape cancels. Backspace disables the shortcut."
+msgstr "Escape zruší změnu. Backspace zkratku zakáže."
+
+#: prefs.js
+msgid "First workspace"
+msgstr "První pracovní plocha"
+
+#: prefs.js
+msgid "GNOME workspace behavior still applies"
+msgstr "Stále platí chování pracovních ploch GNOME"
+
+#: prefs.js
+msgid "If GNOME is configured to use workspaces only on the primary display, windows on other displays remain visible while switching workspaces. Prefer “Primary monitor” for that setup."
+msgstr "Pokud GNOME používá pracovní plochy pouze na primárním monitoru, okna na ostatních monitorech zůstanou při přepínání ploch viditelná. Pro toto nastavení zvolte „Primární monitor“."
+
+#: prefs.js
+msgid "Include minimized windows"
+msgstr "Zahrnout minimalizovaná okna"
+
+#: prefs.js
+msgid "Keep the active window first"
+msgstr "Ponechat aktivní okno jako první"
+
+#: prefs.js
+msgid "Keyboard"
+msgstr "Klávesnice"
+
+#: prefs.js
+msgid "Maximize distributed windows"
+msgstr "Maximalizovat rozdistribuovaná okna"
+
+#: prefs.js
+msgid "Monitor 1"
+msgstr "Monitor 1"
+
+#: prefs.js
+msgid "Monitor 2"
+msgstr "Monitor 2"
+
+#: prefs.js
+msgid "Monitor of active window"
+msgstr "Monitor aktivního okna"
+
+#: prefs.js
+msgid "Move each matching window to its own workspace."
+msgstr "Přesune každé odpovídající okno na samostatnou pracovní plochu."
+
+#: prefs.js
+msgid "Multi-monitor note"
+msgstr "Poznámka k více monitorům"
+
+#: extension.js
+msgid "No matching windows found"
+msgstr "Nebyla nalezena žádná odpovídající okna"
+
+#: prefs.js
+msgid "Non-primary monitor"
+msgstr "Vedlejší monitor"
+
+#: prefs.js
+msgid "Primary monitor"
+msgstr "Primární monitor"
+
+#: prefs.js
+msgid "Reset to default"
+msgstr "Obnovit výchozí"
+
+#: prefs.js
+msgid "Restore these windows to their previous size when collecting them."
+msgstr "Při sesbírání obnoví předchozí velikost těchto oken."
+
+#: prefs.js
+msgid "Set keyboard shortcut"
+msgstr "Nastavit klávesovou zkratku"
+
+#: prefs.js
+msgid "Show confirmation"
+msgstr "Zobrazit potvrzení"
+
+#: prefs.js
+msgid "Start on workspace"
+msgstr "Začít na pracovní ploše"
+
+#: prefs.js
+msgid "The primary option follows your current display configuration."
+msgstr "Volba primárního monitoru se řídí aktuálním nastavením obrazovek."
+
+#: prefs.js
+msgid "The shortcut is active in the desktop and Overview."
+msgstr "Zkratky jsou aktivní na ploše i v Přehledu činností."
+
+#: prefs.js
+msgid "When possible, place the focused window on the starting workspace."
+msgstr "Pokud je to možné, umístí aktivní okno na počáteční pracovní plochu."
+
+#: prefs.js
+msgid "Window Shuffle"
+msgstr "Window Shuffle"
+
+#: extension.js
+msgid "Window collection failed"
+msgstr "Sesbírání oken se nezdařilo"
+
+#: extension.js
+msgid "Window distribution failed"
+msgstr "Distribuce oken se nezdařila"
+
+#: prefs.js
+msgid "Windows on monitor"
+msgstr "Okna na monitoru"

@@ -10,6 +10,7 @@ cd "$SCRIPT_DIR"
 
 EXTENSION_UUID="window-shuffle@digitalspace.name"
 ZIP_NAME="${EXTENSION_UUID}.zip"
+GETTEXT_DOMAIN="$EXTENSION_UUID"
 
 function require_command() {
     if ! command -v "$1" >/dev/null 2>&1; then
@@ -20,12 +21,20 @@ function require_command() {
 
 function build_extension() {
     require_command glib-compile-schemas "Install GLib development tools."
+    require_command msgfmt "Install GNU gettext."
     require_command zip "Install zip."
 
     python3 -m json.tool metadata.json >/dev/null
     glib-compile-schemas --strict schemas
+    for po_file in po/*.po; do
+        language="$(basename "$po_file" .po)"
+        locale_dir="locale/$language/LC_MESSAGES"
+        mkdir -p "$locale_dir"
+        msgfmt --check --output-file \
+            "$locale_dir/$GETTEXT_DOMAIN.mo" "$po_file"
+    done
     rm -f "$ZIP_NAME"
-    zip -rq "$ZIP_NAME" extension.js prefs.js metadata.json schemas \
+    zip -rq "$ZIP_NAME" extension.js prefs.js metadata.json schemas locale \
         -x 'schemas/gschemas.compiled'
     echo "Built $ZIP_NAME"
 }
