@@ -37,6 +37,7 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
         });
 
         page.add(this._createBehaviorGroup(settings));
+        page.add(this._createInterfaceGroup(settings));
         page.add(this._createShortcutGroup(window, settings));
         page.add(this._createInformationGroup());
         window.add(page);
@@ -99,6 +100,21 @@ export default class WindowShufflePreferences extends ExtensionPreferences {
             'show-feedback',
             _('Show confirmation'),
             _('Display a short on-screen message after the shortcut is used.')
+        ));
+
+        return group;
+    }
+
+    _createInterfaceGroup(settings) {
+        const group = new Adw.PreferencesGroup({
+            title: _('Panel'),
+        });
+
+        group.add(this._createSwitchRow(
+            settings,
+            'show-panel-icon',
+            _('Show panel icon'),
+            _('Left-click collects, middle-click distributes, and right-click opens the menu.')
         ));
 
         return group;

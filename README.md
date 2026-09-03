@@ -8,6 +8,10 @@ Window Shuffle is a GNOME Shell 50 extension for turning a crowded desktop into 
 
 - Distribute shortcut: <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>
 - Collect shortcut: <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
+- Optional panel icon with menu actions for distributing and collecting windows
+- Left-click the panel icon to collect windows immediately
+- Middle-click the panel icon to distribute windows immediately
+- Right-click the panel icon to open its menu
 - Collect matching windows from every workspace onto the current workspace
 - Target the primary, non-primary, active, first, second, or all monitors
 - Start from the current or first workspace
@@ -59,7 +63,6 @@ If Window Shuffle makes your workspace more comfortable, you can support its dev
 
 ## Planned directions
 
-- Quick Settings or panel menu action
 - Remember displays by connector/model rather than temporary monitor number
 - Optional undo of the last distribution
 - Window filters and ordering rules

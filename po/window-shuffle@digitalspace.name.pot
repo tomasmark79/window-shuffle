@@ -45,7 +45,7 @@ msgstr ""
 msgid "Choose which windows are placed one per workspace."
 msgstr ""
 
-#: prefs.js
+#: extension.js prefs.js
 msgid "Collect windows"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Display a short on-screen message after the shortcut is used."
 msgstr ""
 
-#: prefs.js
+#: extension.js prefs.js
 msgid "Distribute windows"
 msgstr ""
 
@@ -118,6 +118,14 @@ msgid "Move each matching window to its own workspace."
 msgstr ""
 
 #: prefs.js
+msgid "Left-click collects, middle-click distributes, and right-click opens the menu."
+msgstr ""
+
+#: prefs.js
+msgid "Panel"
+msgstr ""
+
+#: prefs.js
 msgid "Multi-monitor note"
 msgstr ""
 
@@ -150,6 +158,10 @@ msgid "Show confirmation"
 msgstr ""
 
 #: prefs.js
+msgid "Show panel icon"
+msgstr ""
+
+#: prefs.js
 msgid "Start on workspace"
 msgstr ""
 
@@ -165,7 +177,7 @@ msgstr ""
 msgid "When possible, place the focused window on the starting workspace."
 msgstr ""
 
-#: prefs.js
+#: extension.js prefs.js
 msgid "Window Shuffle"
 msgstr ""
 

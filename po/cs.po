@@ -52,7 +52,7 @@ msgstr "Změnit…"
 msgid "Choose which windows are placed one per workspace."
 msgstr "Vyberte okna, která budou umístěna po jednom na každou pracovní plochu."
 
-#: prefs.js
+#: extension.js prefs.js
 msgid "Collect windows"
 msgstr "Sesbírat okna"
 
@@ -68,7 +68,7 @@ msgstr "Aktuální pracovní plocha"
 msgid "Display a short on-screen message after the shortcut is used."
 msgstr "Po použití zkratky zobrazí krátkou zprávu na obrazovce."
 
-#: prefs.js
+#: extension.js prefs.js
 msgid "Distribute windows"
 msgstr "Rozdistribuovat okna"
 
@@ -125,6 +125,14 @@ msgid "Move each matching window to its own workspace."
 msgstr "Přesune každé odpovídající okno na samostatnou pracovní plochu."
 
 #: prefs.js
+msgid "Left-click collects, middle-click distributes, and right-click opens the menu."
+msgstr "Levé kliknutí okna sesbírá, prostřední je rozdistribuuje a pravé otevře nabídku."
+
+#: prefs.js
+msgid "Panel"
+msgstr "Panel"
+
+#: prefs.js
 msgid "Multi-monitor note"
 msgstr "Poznámka k více monitorům"
 
@@ -157,6 +165,10 @@ msgid "Show confirmation"
 msgstr "Zobrazit potvrzení"
 
 #: prefs.js
+msgid "Show panel icon"
+msgstr "Zobrazit ikonu v panelu"
+
+#: prefs.js
 msgid "Start on workspace"
 msgstr "Začít na pracovní ploše"
 
@@ -172,7 +184,7 @@ msgstr "Zkratky jsou aktivní na ploše i v Přehledu činností."
 msgid "When possible, place the focused window on the starting workspace."
 msgstr "Pokud je to možné, umístí aktivní okno na počáteční pracovní plochu."
 
-#: prefs.js
+#: extension.js prefs.js
 msgid "Window Shuffle"
 msgstr "Window Shuffle"
 

@@ -8,11 +8,14 @@
  * (at your option) any later version.
  */
 
+import Clutter from 'gi://Clutter';
 import Gio from 'gi://Gio';
 import Meta from 'gi://Meta';
 import Shell from 'gi://Shell';
+import St from 'gi://St';
 
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import {
     Extension,
     gettext as _,
@@ -43,15 +46,76 @@ export default class WindowShuffleExtension extends Extension {
             () => this._collectWindows()
         );
 
+        this._createPanelIndicator();
+
         console.debug(`${LOG_TAG}: enabled`);
     }
 
     disable() {
         Main.wm.removeKeybinding(SHUFFLE_KEYBINDING);
         Main.wm.removeKeybinding(COLLECT_KEYBINDING);
+        this._indicator?.destroy();
+        this._indicator = null;
         this._maximizedByShuffle = null;
         this._settings = null;
         console.debug(`${LOG_TAG}: disabled`);
+    }
+
+    _createPanelIndicator() {
+        this._indicator = new PanelMenu.Button(
+            0.0,
+            _('Window Shuffle'),
+            false
+        );
+
+        // PanelMenu's built-in gesture accepts every mouse button by default.
+        // Reserve it for the secondary button and use the other buttons for
+        // direct actions below.
+        const menuClickGesture = this._indicator.get_actions()
+            .find(action => action instanceof Clutter.ClickGesture);
+        menuClickGesture?.set_required_button(Clutter.BUTTON_SECONDARY);
+
+        this._indicator.add_child(new St.Icon({
+            icon_name: 'view-grid-symbolic',
+            style_class: 'system-status-icon',
+        }));
+
+        this._indicator.menu.addAction(
+            _('Distribute windows'),
+            () => this._shuffleWindows()
+        );
+        this._indicator.menu.addAction(
+            _('Collect windows'),
+            () => this._collectWindows()
+        );
+
+        const leftClickGesture = new Clutter.ClickGesture({
+            required_button: Clutter.BUTTON_PRIMARY,
+            recognize_on_press: true,
+        });
+        leftClickGesture.connect('recognize', () => {
+            this._indicator.menu.close();
+            this._collectWindows();
+        });
+        this._indicator.add_action(leftClickGesture);
+
+        const middleClickGesture = new Clutter.ClickGesture({
+            required_button: Clutter.BUTTON_MIDDLE,
+            recognize_on_press: true,
+        });
+        middleClickGesture.connect('recognize', () => {
+            this._indicator.menu.close();
+            this._shuffleWindows();
+        });
+        this._indicator.add_action(middleClickGesture);
+
+        this._settings.bind(
+            'show-panel-icon',
+            this._indicator,
+            'visible',
+            Gio.SettingsBindFlags.GET
+        );
+        Main.panel.addToStatusArea(this.uuid, this._indicator);
     }
 
     _shuffleWindows() {
@@ -108,16 +172,16 @@ export default class WindowShuffleExtension extends Extension {
                 return;
             }
 
-            const destinationIndex = global.workspace_manager
-                .get_active_workspace_index();
+            const destinationWorkspace = global.workspace_manager
+                .get_active_workspace();
 
             windows.forEach(window => {
-                window.change_workspace_by_index(destinationIndex, false);
-
                 if (this._maximizedByShuffle.has(window)) {
                     window.unmaximize();
                     this._maximizedByShuffle.delete(window);
                 }
+
+                window.change_workspace(destinationWorkspace);
             });
 
             this._showFeedback(

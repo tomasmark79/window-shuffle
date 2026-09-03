@@ -48,5 +48,10 @@
       <default>true</default>
       <summary>Show on-screen feedback</summary>
     </key>
+    <key name="show-panel-icon" type="b">
+      <default>true</default>
+      <summary>Show the Window Shuffle icon in the panel</summary>
+      <description>Show a panel menu for distributing and collecting windows.</description>
+    </key>
   </schema>
 </schemalist>
