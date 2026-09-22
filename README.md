@@ -2,9 +2,14 @@
 
 [![PayPal](https://img.shields.io/badge/PayPal-Donate-blue?logo=paypal)](https://paypal.me/TomasMark)
 
-**Distribute all currently open windows across GNOME workspaces.**
+**Window Shuffle** is a GNOME Shell extension designed primarily to make working on laptops with a touchpad more comfortable.
 
-Window Shuffle is a GNOME Shell 50 extension for turning a crowded desktop into a touchpad-friendly sequence of workspaces. Distribute matching application windows one per workspace, then collect them back onto the current workspace when needed.
+Turn a crowded desktop into a touchpad-friendly sequence of workspaces by distributing your open windows across them — one window per workspace. When you need to bring everything back together, simply collect the windows onto the current workspace.
+
+- **Distribute:** `Super + Shift + S`
+- **Collect:** `Super + Shift + C`
+
+Window Shuffle encourages a workspace-based workflow that fits naturally with GNOME's design. Giving each window its own workspace makes it easy to switch between tasks using touchpad gestures, keyboard shortcuts, or the Activities overview, while keeping your desktop uncluttered and focused.
 
 ## Features
 
