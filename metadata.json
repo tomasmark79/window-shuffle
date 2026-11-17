@@ -1,6 +1,7 @@
 {
   "shell-version": [
-    "50"
+    "50",
+    "51"
   ],
   "uuid": "window-shuffle@digitalspace.name",
   "name": "Window Shuffle",

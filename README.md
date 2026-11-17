@@ -29,7 +29,7 @@ Window Shuffle encourages a workspace-based workflow that fits naturally with GN
 
 ## Requirements
 
-Declared GNOME Shell version: **50**, as listed in `metadata.json`.
+Declared GNOME Shell versions: **50, 51**, as listed in `metadata.json`.
 Build tools: Bash, Python 3, Node.js (syntax checks), zip, `glib-compile-schemas`
 and `msgfmt` (GNU gettext). Local installation also requires `gnome-extensions`.
 
